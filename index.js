@@ -17,7 +17,7 @@ function endIfMouseMoved() {
         process.exit();
     }
 }
-async function clickAtIntervals(locations, intervals) {
+async function clickAtIntervals(locations) {
     let locationIndex = 0;
     let location = locations[locationIndex];
     while (true) {
@@ -52,7 +52,7 @@ function runProgram(waitBeforeExecution, debug, locations) {
             setTimeout(() => {
                 console.log('Starting...');
                 clickAtIntervals(locations);
-            }, waitBeforeExecution * 1000);
+            }, waitBeforeExecution * 1000 + 500);
         } else clickAtIntervals(locations);
     }
 }
